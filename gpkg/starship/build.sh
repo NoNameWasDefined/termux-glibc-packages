@@ -12,6 +12,7 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="--all-features"
 TERMUX_PKG_SUGGESTS="nerdfix, taplo"
 
 termux_step_pre_configure() {
+	: "${CARGO_TARGET_NAME:="${TERMUX_ARCH}-unknown-linux-gnu"}"
 	termux_setup_rust
 	termux_setup_cmake
 	: "${CARGO_HOME:=${HOME}/.cargo}"
